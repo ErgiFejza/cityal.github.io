@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Responsive Navigation Bar</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <nav>
+      <ul>
+         <li class="logo">CodingNepal</li>
+         <li class="items"><a href="#">Home</a></li>
+         <li class="items"><a href="#">About</a></li>
+         <li class="items"><a href="#">Blogs</a></li>
+         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+   </nav>
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+nav{
+  background: #5369e6;
+  padding: 5px 40px;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li{
+  padding: 15px 0;
+  cursor: pointer;
+}
+nav ul li.items{
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+}
+nav ul li.items:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: #33ffff;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+nav ul li.items:hover:after{
+  opacity: 1;
+  bottom: 8px;
+}
+nav ul li.logo{
+  flex: 1;
+  color: white;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+}
+nav ul li a{
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: .4s;
+}
+nav ul li:hover a{
+  color: cyan;
+}
+nav ul li i{
+  font-size: 23px;
+}
+nav ul li.btn{
+  display: none;
+}
+nav ul li.btn.hide i:before{
+  content: '\f00d';
+}
+@media all and (max-width: 900px){
+  nav{
+    padding: 5px 30px;
+  }
+  nav ul li.items{
+    width: 100%;
+    display: none;
+  }
+  nav ul li.items.show{
+    display: block;
+  }
+  nav ul li.btn{
+    display: block;
+  }
+  nav ul li.items:hover{
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #33ffff,
+                inset 0 0 10px #66ffff;
+  }
+  nav ul li.items:hover:after{
+    opacity: 0;
+  }
+}
+</style>
+
+
+
+<div>
+    <h3>Welcome in website for info programming</h3>
+    <p>This website give you information for Programing and web developer thisgive 
+    free from web we wish you a good time on our site and thank you for visiting us, this website is 100% real .
+  </p>
+</div>
+<h2 class="h2"><a class="a" href="#">Welcome</a></h2>
+<style>
+h3{
+ font-size:65px;
+ font-family:Crimson Text;
+ text-align: center;
+ color:#117ac9;
+ margin-top:110px;
+}
+p{
+ text-align: center;
+ padding:0 70px;
+ font-size:20px;
+ color:#1a415f;
+ margin-top:40px;
+}
+.h2{
+  text-align: center;
+  margin-top:40px;
+}
+.a{
+  text-decoration: none;
+  color:#fff;
+  background-color: #117ac9;
+  padding:10px 20px;
+  border-radius:5px;
+}
+</style>
+ </html>
+
+ <img src="image/program.svg" alt="Sunflower"style="float: left; 
+  margin-right: 15px;
+  margin-top:120px;
+  padding:0 20px;"/>
+<h4>Computer software engineers and system analysts specify the programs computer programmers develop. Engineers and system analysts design software and programmers convert engineer designs into programs that operate computers. Programmers code programs into a computer language such as COBOL, Prolong, an artificial intelligence language, or an advanced object oriented language such as Java, C++, or ACTOR.
+</h4>
+<style>
+h4{
+  margin-top:135px;
+  font-size:18px;
+  color:#4c4e4e;
+  padding: 0 13px; 
+  }
+</style>
+
