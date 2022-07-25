@@ -1,176 +1,497 @@
 <!DOCTYPE html>
-<head>
-   <meta charset="utf-8">
-   <title>Responsive Navigation Bar</title>
-   <link rel="stylesheet" href="style.css">
-   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<html lang="en" dir="ltr">  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
 <body>
-   <nav>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">AlCity</a>
+      </div>
       <ul>
-         <li class="logo">CodingNepal</li>
-         <li class="items"><a href="#">Home</a></li>
-         <li class="items"><a href="#">About</a></li>
-         <li class="items"><a href="#">Blogs</a></li>
-         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+        <li><a href="plan.html">Home</a></li>
+        <li><a href="city.html">About</a></li>
+        <li><a href="#Div">Citys</a></li>
       </ul>
-   </nav>
-   <script>
-      $(document).ready(function(){
-        $('.btn').click(function(){
-          $('.items').toggleClass("show");
-          $('ul li').toggleClass("hide");
-        });
-      });
-   </script>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Give Information for</div>
+    <div class="sub_title">Albania Citys</div>
+    <div class="btns">
+      <button><a href="city.html">Learn more</a></button>
+    </div>
+  </div>
 </body>
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat',sans-serif;
+  font-family: 'Poppins',sans-serif;
+}
+::selection{
+  color: #000;
+  background: #fff;
 }
 nav{
-  background: #5369e6;
-  padding: 5px 40px;
-}
-nav ul{
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-nav ul li{
-  padding: 15px 0;
-  cursor: pointer;
-}
-nav ul li.items{
-  position: relative;
-  width: auto;
-  margin: 0 16px;
-  text-align: center;
-  order: 3;
-}
-nav ul li.items:after{
-  position: absolute;
-  content: '';
-  left: 0;
-  bottom: 5px;
-  height: 2px;
+  position: fixed;
+  background: #1b1b1b;
   width: 100%;
-  background: #33ffff;
-  opacity: 0;
-  transition: all 0.2s linear;
+  padding: 10px 0;
+  z-index: 12;
 }
-nav ul li.items:hover:after{
-  opacity: 1;
-  bottom: 8px;
+nav .menu{
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 }
-nav ul li.logo{
-  flex: 1;
-  color: white;
-  font-size: 23px;
-  font-weight: 600;
-  cursor: default;
-  user-select: none;
-}
-nav ul li a{
-  color: white;
-  font-size: 18px;
+.menu .logo a{
   text-decoration: none;
-  transition: .4s;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
 }
-nav ul li:hover a{
-  color: cyan;
+.menu ul{
+  display: inline-flex;
 }
-nav ul li i{
-  font-size: 23px;
+.menu ul li{
+  list-style: none;
+  margin-left: 7px;
 }
-nav ul li.btn{
-  display: none;
+.menu ul li:first-child{
+  margin-left: 0px;
 }
-nav ul li.btn.hide i:before{
-  content: '\f00d';
+.menu ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
-@media all and (max-width: 900px){
-  nav{
-    padding: 5px 30px;
-  }
-  nav ul li.items{
-    width: 100%;
-    display: none;
-  }
-  nav ul li.items.show{
-    display: block;
-  }
-  nav ul li.btn{
-    display: block;
-  }
-  nav ul li.items:hover{
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px #33ffff,
-                inset 0 0 10px #66ffff;
-  }
-  nav ul li.items:hover:after{
-    opacity: 0;
-  }
+.menu ul li a:hover{
+  background: #fff;
+  color: black;
+}
+.img{
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Tirana_from_South.jpg/300px-Tirana_from_South.jpg');
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.img::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.center{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+.center .title{
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+.center .sub_title{
+  color: #fff;
+  font-size: 52px;
+  font-weight: 600;
+}
+.center .btns{
+  margin-top: 20px;
+}
+.center .btns button{
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.center .btns button:first-child{
+  color: #fff;
+  background: none;
+}
+.btns button:first-child:hover{
+  background: white;
+  color: black;
+}
+.center .btns button:last-child{
+  background: white;
+  color: black;
 }
 </style>
 
 
-
-<div>
-    <h3>Welcome in website for info programming</h3>
-    <p>This website give you information for Programing and web developer thisgive 
-    free from web we wish you a good time on our site and thank you for visiting us, this website is 100% real .
-  </p>
-</div>
-<h2 class="h2"><a class="a" href="#">Welcome</a></h2>
+<br><html>
+<head>
 <style>
-h3{
- font-size:65px;
- font-family:Crimson Text;
- text-align: center;
- color:#117ac9;
- margin-top:110px;
+.myDiv {
+  background-color:rgb(27, 145, 27);    
+  padding:5px 10px;
+  margin:30px;
+  border-radius: 10px;
+}
+h1{
+  text-align: center;
+  font-size:40px;
+  font-family: 'arial';
+  color:orange;
+}
+</style>
+</head>
+
+
+<body>
+<div id="Div" class="myDiv">
+<h1>Northern Albania</h1>
+</div>
+</body>
+</html>
+
+
+
+<br><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="items">
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Shkod%C3%ABr"><img src="https://www.fantastic-removals.co.uk/blog/wp-content/uploads/2021/10/shkodra-albania.jpg"/></a><p>Shkoder</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Tropoj%C3%AB"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFzviBbi_TS26rXLP29rp3wXu8IF6RW3LYJw&usqp=CAU"/></a><p>Tropeje</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Puk%C3%AB"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl6qxqwdvvcy7GtAdWjazKMjK5Dpp4t9MTUm1rEVTPIf9U6G3oEXexAHzM9e2YQ2OuhQM&usqp=CAU"/></a><p>Puke</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Kuk%C3%ABs"><img src="https://media-cdn.tripadvisor.com/media/photo-s/06/89/51/ba/amerika-hotel.jpg"/></a><p>Kukes</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Lezh%C3%AB"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoXBDCC4emZNdy5d-XDFHYrGDqWVqJd4MIcpZ8FTKrn9y0CNT3DQ0LoTsVyWD-s7dL7E&usqp=CAU"/></a><p>Lezhe</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Mirdit%C3%AB"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmmk6m6g-v5Mw5rPJImR4ZEoL4yUIskfXRI7pQsyl3y8iUgL4StO-ImqN4iH8Zv-FAmBc&usqp=CAU"/></a><p>Mirdite</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Dib%C3%ABr_County"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mali_Bardhe.jpg/210px-Mali_Bardhe.jpg"/></a><p>Diber</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Kruj%C3%AB"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Kruj%C3%AB-KrujaAlbania_2016.jpg/290px-Kruj%C3%AB-KrujaAlbania_2016.jpg"/></a><p>Kruje</p></div>
+  </div>
+</body>
+<style>
+  .items{
+    display: flex;
+    overflow-x: auto;
+  }
+  .items .item{
+    min-width:150px;
+    height: 190px;
+    margin: 10px;
+    background:rgb(172, 172, 172);
+  }
+  img{
+    height: 150px;
+    margin: 10px;
+    width:130px; 
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 15px;
 }
 p{
- text-align: center;
- padding:0 70px;
- font-size:20px;
- color:#1a415f;
- margin-top:40px;
-}
-.h2{
   text-align: center;
-  margin-top:40px;
-}
-.a{
-  text-decoration: none;
-  color:#fff;
-  background-color: #117ac9;
-  padding:10px 20px;
-  border-radius:5px;
+  margin-top:-15px;
+  font-size: 19px;
 }
 </style>
- </html>
 
- <img src="image/program.svg" alt="Sunflower"style="float: left; 
-  margin-right: 15px;
-  margin-top:120px;
-  padding:0 20px;"/>
-<h4>Computer software engineers and system analysts specify the programs computer programmers develop. Engineers and system analysts design software and programmers convert engineer designs into programs that operate computers. Programmers code programs into a computer language such as COBOL, Prolong, an artificial intelligence language, or an advanced object oriented language such as Java, C++, or ACTOR.
-</h4>
+
+
+<br><html>
+<head>
 <style>
-h4{
-  margin-top:135px;
-  font-size:18px;
-  color:#4c4e4e;
-  padding: 0 13px; 
-  }
+.myDiv {
+  background-color:rgb(27, 145, 27);    
+  padding:5px 10px;
+  margin:30px;
+  border-radius: 10px;
+}
+h1{
+  text-align: center;
+  font-size:40px;
+  font-family: 'arial';
+  color:orange;
+}
 </style>
+</head>
+<body>
+<div class="myDiv">
+<h1>Middle Albania</h1>
+</div>
+</body>
+</html>
+
+<br><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="items">
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Tirana"><img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/inXcDVGw.OKQ/v1/1200x-1.jpg"/></a><p>Tirane</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Elbasan"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Elbasan_1.jpg"/></a><p>Elbasan</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Kruj%C3%AB"><img src="https://ak.picdn.net/offset/photos/5bd1f665daee26d9e8c7d9ff/medium/offset_754834.jpg"/></a><p>Kruje</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Kavaj%C3%AB"><img src="https://www.remax-albania.com/AreaGuideImages/53/979/15015/kavaje.jpg"/></a><p>kavaje</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Durr%C3%ABs"><img src="https://www.destinations-in-europe.com/wp-content/uploads/2021/09/durres-albania.jpg"/></a><p>Durres</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Librazhd"><img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Librazhd%2C_Albania_2018_01.jpg"/></a><p>Librazht</p></div>
+  </div>
+</body>
+<style>
+  .items{
+    display: flex;
+    overflow-x: auto;
+  }
+  .items .item{
+    min-width:150px;
+    height: 190px;
+    margin: 10px;
+    background:rgb(172, 172, 172);
+  }
+  img{
+    height: 150px;
+    margin: 10px;
+    width:130px; 
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 15px;
+}
+p{
+  text-align: center;
+  margin-top:-15px;
+  font-size: 19px;
+}
+</style>
+
+
+
+<br><html>
+<head>
+<style>
+.myDiv {
+  background-color:rgb(27, 145, 27);    
+  padding:5px 10px;
+  margin:30px;
+  border-radius: 10px;
+}
+h1{
+  text-align: center;
+  font-size:40px;
+  font-family: 'arial';
+  color:orange;
+}
+</style>
+</head>
+<body>
+<div class="myDiv">
+<h1>South Albania</h1>
+</div>
+</body>
+</html>
+
+<br><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="items">
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Lushnj%C3%AB"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpVw6yzm-BvR66P7AjTgkaLcR5To2grOspFju616cIae7xyi-0CivcwL2q_es1lP_3_YA&usqp=CAU"/></a><p>Lushnje</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Berat"><img src="https://invest-in-albania.org/wp-content/uploads/BeratAlbaniaWhiteCity-4-1024x703.jpg"/></a><p>Berat</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Gramsh,_Elbasan"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxy4T2XLKAeFykgCkg6XRwhKBTRDHv8RLWRDSQJRfgcTWzKlLwoJZonadS-VPf7fpD0qU&usqp=CAU"/></a><p>Gramsh</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Gramsh,_Elbasan"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfzEexFF7LSKhqDTYkafTI3h9zVI5rq8sCymqGMOW866amuBf00D_ScfB4fK8zvlVgLLM&usqp=CAU"/></a><p>Pogradec</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Fier"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-zNx6jNQN-9dgLiH6i5U80M7w54OKdnQaWmAun0tNN3piew9BeCz4CfhT5PMKzZ6CRYg&usqp=CAU"/></a><p>Fier</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Skrapar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT4bPT5k-CjThx_hlxd0JLddBsBV_EQ2T8a8-OOW3z9VZ6FymDyx9SeZ5TViG1GLKV7tQ&usqp=CAU"/></a><p>Skrapar</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Kor%C3%A7%C3%AB"><img src="https://www.remax-albania.com/AreaGuideImages/53/979/9365/08_big.jpg"/></a><p>Korçe</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Vlor%C3%AB"><img src="https://cdn.britannica.com/21/136121-050-F26E5F14/Vlore-Alb.jpg"/></a><p>Vlore</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Tepelen%C3%AB"><img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/87/5e/ac.jpg"/></a><p>Tepelene</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/P%C3%ABrmet"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/77/2c/31/246133234-364092-largejpg.jpg?w=400&h=-1&s=1"/></a><p>Përmet</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Gjirokast%C3%ABr"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVQhwd4UYwGJ0eQpwjK9fupcDkrx8qvAKxZuBEgKzfsFn2kilnOkMygRrlX3o5HKMPO9k&usqp=CAU"/></a><p>Gjirokaste</p></div>
+    <div class="item"><a href="https://en.wikipedia.org/wiki/Sarand%C3%AB"><img src="https://cdn.getyourguide.com/img/tour/5f3e52f54d851.jpeg/146.jpg"/></a><p>Sarand</p></div>
+  </div>
+</body>
+<style>
+  .items{
+    display: flex;
+    overflow-x: auto;
+  }
+  .items .item{
+    min-width:150px;
+    height: 190px;
+    margin: 10px;
+    background:rgb(172, 172, 172);
+  }
+  img{
+    height: 150px;
+    margin: 10px;
+    width:130px; 
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 15px;
+}
+p{
+  text-align: center;
+  margin-top:-15px;
+  font-size: 19px;
+}
+</style>
+
+
+
+
+</html>
+<br><footer class="footer-distributed">
+
+  <div class="footer-left">
+
+    <p class="footer-links">
+      <a class="link-1" href="plan.html"><i class="fas fa-chevron-circle-up"></i> up</a>
+      <br><h4 class="djathtas">This page gives you programming information</h4>
+    </p>
+    <p>Dev &copy; 2022</p>
+  </div>
+</footer>
+<style>
+section {
+width: 100%;
+display: inline-block;
+background: #ccc;
+height: 60vh;
+text-align: center;
+font-size: 22px;
+font-weight: 700;
+text-decoration: underline;
+}
+
+.footer-distributed {
+background-color: #292c2f;
+box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+box-sizing: border-box;
+width: 100%;
+text-align: left;
+font: normal 16px sans-serif;
+padding: 45px 50px;
+}
+
+.footer-distributed .footer-left p {
+color: #8f9296;
+font-size: 14px;
+margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+font-size: 18px;
+font-weight: bold;
+color: #ffffff;
+margin: 0 0 10px;
+padding: 0;
+transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+display: inline-block;
+line-height: 1.8;
+text-decoration: none;
+color: inherit;
+transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+content: "·";
+font-size: 20px;
+left: 0;
+color: #fff;
+display: inline-block;
+padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+content: none;
+}
+
+
+.footer-distributed .footer-right a {
+display: inline-block;
+width: 35px;
+height: 35px;
+background-color: #33383b;
+border-radius: 2px;
+font-size: 20px;
+color: #ffffff;
+text-align: center;
+line-height: 35px;
+margin-left: 3px;
+transition:all .25s;
+}
+.djathtas{
+text-align: left;
+color: white;
+text-align: center;
+}
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+.footer-distributed .footer-left, .footer-distributed .footer-right {
+text-align: center;
+}
+.footer-distributed .footer-right {
+float: none;
+margin: 0 auto 20px;
+}
+.footer-distributed .footer-left p.footer-links {
+line-height: 1.8;
+}
+}
+</style>
+</html>
+
+
